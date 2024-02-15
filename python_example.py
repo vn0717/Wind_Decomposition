@@ -1,3 +1,11 @@
+"""
+Wind Decomposition Example Python Script
+
+Michael P. Vossen
+Last Updated: 2/15/2024
+"""
+
+
 #MPI STARTS HERE
 from mpi4py import MPI
 #these packages load for each processor
