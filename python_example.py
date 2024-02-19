@@ -37,7 +37,7 @@ if rank == 0:
 	#You can only broadcast one variable to processors.  So I put
 	#things into a dictonary to make it easier than multiple broadcast
 	#calls
-	data = {"DX" : dx, "DY" : dy, "vort" : vort, "div" : div, "limit", limit}
+	data = {"DX" : dx, "DY" : dy, "vort" : vort, "div" : div, "limit": limit}
 	
 	#for timing performance
 	start_time = time.time()
