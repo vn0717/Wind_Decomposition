@@ -9,7 +9,7 @@ Last Updated: 2/15/2024
 #MPI STARTS HERE
 from mpi4py import MPI
 #these packages load for each processor
-from vort_div import get_wind
+from vort_div import wind_decomp
 import numpy as np
 
 
@@ -58,15 +58,15 @@ else:
 data = comm.bcast(data, root=0)
 	
 #call the subroutine to calcluate the wind decomosition on each processor
-out_data = get_wind.vort_div_wind(data["DX"],data["DY"], data["vort"], data["div"], data["limit"])
+out_data = wind_decomp.vort_div_wind(data["DX"],data["DY"], data["vort"], data["div"], data["limit"])
 
 #take all of the data from the processor and package it up into
 #a dictonary to send back to the root processor.  Once again
 #you can only use one variable.
-send_data = {"U_CHI": get_wind.u_chi, \
-"V_CHI": get_wind.v_chi, \
-"U_PSI": get_wind.u_psi, \
-"V_PSI":get_wind.v_psi, \
+send_data = {"U_CHI": wind_decomp.u_chi, \
+"V_CHI": wind_decomp.v_chi, \
+"U_PSI": wind_decomp.u_psi, \
+"V_PSI":wind_decomp.v_psi, \
 "start":out_data[0], \
 "end":out_data[1]}
 
