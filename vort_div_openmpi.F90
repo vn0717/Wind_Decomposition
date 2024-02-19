@@ -51,7 +51,7 @@ REAL :: UPSI_SUM, VPSI_SUM, UCHI_SUM, VCHI_SUM, R, PI, DIFF_X, DIIF_Y, R2, DIFF_
 
 INTEGER :: I, J, X1, Y1, &
 PASS, START_X, START_Y, END_X, &
-END_Y, LIMIT, LIM_X, LIM_Y, HALF_X, &
+END_Y, LIM_X, LIM_Y, HALF_X, &
 HALF_Y, ierr, &
 size, rank, iterations_per_process, namelength,&
 grid_remain, i_size, actual_i
